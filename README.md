@@ -1,0 +1,1 @@
+Simple project to demonstrate the use of Python metaclasses
