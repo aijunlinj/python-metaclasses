@@ -1,6 +1,7 @@
 from unittest import TestCase
-from converters.date_converters import *
 from converters.converter_base import ConverterBase
+# Below import is required in order for Python interpretor to load the converter classes
+from converters.date_converters import *
 
 class TestDateConverters(TestCase):
 

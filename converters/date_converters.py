@@ -5,9 +5,14 @@ __all__ = ['MMDDYYYYToISODate', 'YYYYMMDDToISODate', 'YYMMDDToISODate']
 
 VALID_SEPARATORS = '[-/]'
 
-class MMDDYYYYToISODate(ConverterBase):
-    """Convert mmddyyyy format to standard ISO date format."""
+class DateConverterBase(ConverterBase):
     TYPE = 'Date'
+    NAME = 'DateConverterBase'
+    REGISTER = False
+
+
+class MMDDYYYYToISODate(DateConverterBase):
+    """Convert mmddyyyy format to standard ISO date format."""
     NAME = 'mmddyyyy_to_iso_date'
     REGISTER = True
 
@@ -23,9 +28,8 @@ class MMDDYYYYToISODate(ConverterBase):
         )
 
 
-class YYYYMMDDToISODate(ConverterBase):
+class YYYYMMDDToISODate(DateConverterBase):
     """Convert yyyymmdd format to standard ISO date format."""
-    TYPE = 'Date'
     NAME = 'yyyymmdd_to_iso_date'
     REGISTER = True
 
@@ -41,9 +45,8 @@ class YYYYMMDDToISODate(ConverterBase):
         )
 
 
-class YYMMDDToISODate(ConverterBase):
+class YYMMDDToISODate(DateConverterBase):
     """Convert yymmdd format to standard ISO date format."""
-    TYPE = 'Date'
     NAME = 'yymmdd_to_iso_date'
     REGISTER = True
 

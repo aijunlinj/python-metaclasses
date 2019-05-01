@@ -1,2 +1,4 @@
 .idea/
 .venv/
+converters/__pycache__/
+tests/__pycache__/

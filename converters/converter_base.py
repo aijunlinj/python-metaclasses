@@ -14,12 +14,12 @@ class ConverterMeta(type):
         if hasattr(klass, 'REGISTER') and klass.REGISTER==False:
             return
 
-        print(f'registering class {klass.__name__}')
         if not hasattr(klass, 'TYPE') or klass.TYPE is None:
             raise ValueError(f'class {klass.__name__} did not define TYPE attribute')
         if not hasattr(klass, 'NAME') or klass.NAME is None:
             raise ValueError(f'class {klass.__name__} did not define NAME attribute')
 
+        print(f'Registering class {klass.__name__}, TYPE = {klass.TYPE}, NAME = {klass.NAME}')
         # TODO: check TYPE and NAME clashes (i.e. different classes define the same TYPE and NAME
         cls.converter_lookup[klass.TYPE][klass.NAME] = klass()
 
