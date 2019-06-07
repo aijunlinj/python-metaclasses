@@ -23,6 +23,17 @@ class ConverterMeta(type):
         # TODO: check TYPE and NAME clashes (i.e. different classes define the same TYPE and NAME
         cls.converter_lookup[klass.TYPE][klass.NAME] = klass()
 
+
+    @classmethod
+    def de_registor_converter(cls, converter_type: str, converter_name):
+        try:
+            converters = cls.converter_lookup.get(converter_type)
+            if converters:
+                converters.pop(converter_name)
+        except KeyError:
+            print(f"Converter of type {converter_type} and name {converter_name} doesn't exist")
+
+
     @classmethod
     def get_converter(cls, converter_type, converter_name):
         if not converter_type in cls.converter_lookup:

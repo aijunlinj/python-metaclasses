@@ -8,7 +8,7 @@ class TestCurrencyConverters(TestCase):
         usd = 100.0
         converter = ConverterBase.get_converter('Currency', 'usd_to_gbp')
         converted = converter.convert(usd)
-        print(f'${usd} converts to {converted} GBP')
+        print(f'\n${usd} converts to {converted} GBP')
         self.assertEqual(converted, 76.0)
 
     def test_usd_to_jpy(self):
